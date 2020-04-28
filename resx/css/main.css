@@ -99,16 +99,18 @@ main {
 img.masthead {
 	height: 10rem;
 	margin-bottom: 10px;
-}
+	}
 
-@keyframes {
-	0%: {
-		rot
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
 	}
 }
 
 img.exchange {
 	height: 3rem;
+	animation: spin 2s linear 0s infinite normal forwards;
+
 }
 
 footer {

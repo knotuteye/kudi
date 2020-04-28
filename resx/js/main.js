@@ -1,4 +1,17 @@
 const init = () => {
+	setTimeout(function () {
+		let viewheight = $(window).height()
+		let viewwidth = $(window).width()
+		let viewport = document.querySelector('meta[name=viewport]')
+		viewport.setAttribute(
+			'content',
+			'height=' +
+				viewheight +
+				'px, width=' +
+				viewwidth +
+				'px, initial-scale=1.0'
+		)
+	}, 300)
 	fetch(
 		'https://prime.exchangerate-api.com/v5/4fff55994a5ddad27798dd80/latest/USD'
 	)
