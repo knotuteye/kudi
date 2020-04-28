@@ -101,6 +101,12 @@ img.masthead {
 	margin-bottom: 10px;
 }
 
+@keyframes {
+	0%: {
+		rot
+	}
+}
+
 img.exchange {
 	height: 3rem;
 }

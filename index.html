@@ -30,20 +30,20 @@
     <main>
         <img src="resx/img/law.svg" alt="" class="masthead">
         <div class="cash-input">
-            <input type="number" placeholder="0.00">
-            <select id="select-1">
+            <input type="number" id="input-1" placeholder="0.00" onchange="convert(event)">
+            <select id="select-1" onchange="convert(event)">
                 <option value="GHC"></option>
             </select>
 
         </div>
         <img src="resx/img/cent.svg" alt="" class="exchange">
         <div class="cash-input">
-            <input type="number" placeholder="0.00">
-            <select id="select-2">
+            <input type="number" id="input-2" placeholder="0.00" onchange="convert(event)">
+            <select id="select-2" onchange="convert(event)">
                 <option value="GHC"></option>
             </select>
-
         </div>
+        <p id="update-time">Rates from: </p>
     </main>
     <footer>
         <p>Kudi Cash</p>
