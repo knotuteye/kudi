@@ -23,13 +23,6 @@ h1 {
 	margin: 0;
 }
 
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
 .hamburger {
 	padding: 15px 15px;
 	display: inline-block;
@@ -107,7 +100,6 @@ h1 {
 main {
 	display: flex;
 	flex-flow: column nowrap;
-	/* /* padding: 1rem; */
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
@@ -149,7 +141,6 @@ main {
 	margin: 0;
 }
 
-/* Firefox */
 .cash-input > input[type='number'] {
 	-moz-appearance: textfield;
 }

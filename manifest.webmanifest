@@ -1,7 +1,7 @@
 {
 	"name": "Kudi",
 	"short_name": "Kudi",
-	"description": "A currency conversion app operating on over 50 international currencies",
+	"description": "A currency conversion app operating on over 50 international currencies.",
 	"theme_color": "#ffd900",
 	"background_color": "#000000",
 	"display": "standalone",
