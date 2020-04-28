@@ -5,6 +5,11 @@ const socialLinks = [
 ]
 
 const init = () => {
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/service-worker.js').catch((err) => {
+			if (err) alert(err)
+		})
+	}
 	fetch(
 		'https://prime.exchangerate-api.com/v5/4fff55994a5ddad27798dd80/latest/USD'
 	)
