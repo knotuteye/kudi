@@ -6,7 +6,7 @@ const socialLinks = [
 
 const init = () => {
 	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('../../service-worker.js').catch((err) => {
+		navigator.serviceWorker.register('../../kudi/service-worker.js').catch((err) => {
 			if (err) alert(err)
 		})
 	}
