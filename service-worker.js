@@ -1,4 +1,4 @@
-const PRECACHE = 'kudi-cache-v1'
+const PRECACHE = 'kudi-cache-v2'
 const RUNTIME = 'runtime'
 const PRECACHE_URLS = [
 	'/index.html',
