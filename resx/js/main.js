@@ -28,11 +28,7 @@ const init = () => {
 			).innerText += ` ${refreshTime.getDate()}\\${refreshTime.getMonth()}\\${refreshTime.getFullYear()}`
 		})
 		.then(() => {
-			document.getElementsByTagName(
-				'select'
-			)[1].value = document.getElementsByTagName(
-				'select'
-			)[1].children[1].value
+			document.getElementById('select-2').selectedIndex = 1
 		})
 		.then(() => {
 			for (let i = 0; i < socialLinks.length; i++) {
@@ -51,6 +47,7 @@ const init = () => {
  * @param {Event} event
  */
 const convert = (event) => {
+	hideKeyboard()
 	let input = document.getElementById(
 		`input-${event.target.id.slice(-1) == 1 ? 2 : 1}`
 	)
@@ -67,4 +64,16 @@ const convert = (event) => {
 					.value
 			))
 	).toFixed(4)
+}
+
+const hideKeyboard = () => {
+	let field = document.createElement('input')
+	field.setAttribute('type', 'text')
+	document.body.appendChild(field)
+	setTimeout(function () {
+		field.focus()
+		setTimeout(function () {
+			field.setAttribute('style', 'display:none;')
+		}, 50)
+	}, 50)
 }
