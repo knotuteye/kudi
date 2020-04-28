@@ -1,0 +1,123 @@
+* {
+	transition: all 0.2s ease-in-out;
+}
+
+body {
+	margin: 0;
+	font-family: Comfortaa, cursive;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	padding: 0.75rem 1.5rem;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 30px;
+	height: 30px;
+}
+
+h1 {
+	margin: 0;
+}
+
+.hamburger {
+	padding: 0;
+}
+
+.hamburger-box,
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 30px;
+}
+
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 1rem;
+	height: 20rem;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	margin-top: calc(50vh - 18rem);
+	width: fit-content;
+}
+
+.cash-input {
+	display: flex;
+	width: fit-content;
+	border: 1px solid goldenrod;
+	border-radius: 6px;
+	height: 2.4rem;
+	margin: 12px;
+	font-family: Manrope, sans-serif;
+}
+
+.cash-input > input {
+	max-width: 10rem;
+	padding: 3px 1rem;
+	border: 0;
+	border-radius: 6px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	font-size: 20px;
+	font-family: inherit;
+}
+
+.cash-input > input:active,
+.cash-input > input:focus,
+.cash-input > select:active,
+.cash-input > select:focus {
+	outline: none;
+}
+
+.cash-input > input::-webkit-outer-spin-button,
+.cash-input > input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.cash-input > input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.cash-input > select {
+	padding: 0 6px;
+	border: 0;
+	border-radius: 6px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	background: gold;
+	font-size: 20px;
+	font-family: inherit;
+}
+
+img.masthead {
+	height: 10rem;
+	margin-bottom: 10px;
+}
+
+img.exchange {
+	height: 3rem;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	position: absolute;
+	border-top: 2px inset;
+	width: 100%;
+	bottom: 0;
+	background-color: white;
+}
+
+footer > p {
+	margin: 0;
+	font-size: small;
+}
