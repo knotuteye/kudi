@@ -114,27 +114,30 @@ img.exchange {
 .social {
 	display: flex;
 	justify-content: space-between;
-	max-width: 15rem;
+	max-width: 12rem;
 	margin: 0 auto;
 	padding: 2rem;
 }
 
 .social > svg {
 	height: 2.5rem;
+	cursor: pointer;
 }
 
 .social > :nth-child(1) {
+	stroke: white;
 	fill: black;
 }
 
 .social > :nth-child(2) {
+	stroke: white;
 	fill: red;
 }
-.social > :nth-child(3) {
-	fill: #fc6d27;
-	stroke: #fc6d27;
-}
 .social > :nth-child(4) {
+	stroke: orange;
+	fill: orange;
+}
+.social > :nth-child(3) {
 	fill: #0088cc;
 }
 
