@@ -44,7 +44,11 @@ const init = () => {
 					})
 			}
 		})
-		.catch((err) => alert(err))
+		.catch(
+			(err) =>
+				(document.getElementById('update-time').innerText =
+					'Sorry, you appear to be offline.')
+		)
 }
 
 /**
