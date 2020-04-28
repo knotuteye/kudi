@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap"
+			rel="stylesheet"
+		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#ffd900" />
 		<meta name="msapplication-TileColor" content="#ffd900" />
 		<meta name="msapplication-navbutton-color" content="#ffd900" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="#ffd900" />
+		<link rel="apple-touch-icon" href="resx/img/coin.svg" />
 		<link
 			rel="shortcut icon"
 			href="resx/img/favicon.png"
 			type="image/x-icon"
 		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Manrope:wght@300&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="resx/css/hamburgers.css" />
 		<link rel="stylesheet" href="resx/css/main.css" />
 		<link rel="manifest" href="manifest.webmanifest" />
-		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-		<script src="resx/js/main.js"></script>
 		<title>Kudi</title>
 	</head>
 
 	<body onload="init()">
 		<header>
-			<img src="resx/img/coin.svg" class="logo" />
+			<img src="resx/img/coin.svg" alt="logo" class="logo" />
 			<h1>Kudi</h1>
 			<button
+				aria-label="menu button"
 				class="hamburger hamburger--collapse menu-btn"
 				type="button"
 			>
@@ -38,27 +37,41 @@
 			</button>
 		</header>
 		<main>
-			<img src="resx/img/law.svg" alt="" class="masthead" />
+			<img src="resx/img/law.svg" alt="masthead" class="masthead" />
 			<div class="cash-input">
 				<input
+					aria-label="input amount to convert"
 					type="number"
 					id="input-1"
 					placeholder="0.00"
 					onchange="convert(event)"
 				/>
-				<select id="select-1" onchange="convert(event)">
+				<select
+					aria-label="currency to convert"
+					id="select-1"
+					onchange="convert(event)"
+				>
 					<option value="5.80">GHC</option>
 				</select>
 			</div>
-			<img src="resx/img/cent.svg" alt="" class="exchange" />
+			<img
+				src="resx/img/cent.svg"
+				alt="spin-separator"
+				class="exchange"
+			/>
 			<div class="cash-input">
 				<input
+					aria-label="input amount to convert"
 					type="number"
 					id="input-2"
 					placeholder="0.00"
 					onchange="convert(event)"
 				/>
-				<select id="select-2" onchange="convert(event)">
+				<select
+					aria-label="currency to convert"
+					id="select-2"
+					onchange="convert(event)"
+				>
 					<option value="5.80">GHC</option>
 				</select>
 			</div>
@@ -98,5 +111,7 @@
 			<p>Kevin Otuteye</p>
 			<p>April 2020</p>
 		</footer>
+
+		<script src="resx/js/main.js"></script>
 	</body>
 </html>

@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+server.csr
+server.csr.cnf
+server.key
+v3.ext

@@ -32,23 +32,20 @@ const init = () => {
 				'update-time'
 			).innerText += ` ${refreshTime.getDate()}\\${refreshTime.getMonth()}\\${refreshTime.getFullYear()}`
 		})
-		.then(() => {
-			document.getElementById('select-2').selectedIndex = 1
-		})
-		.then(() => {
-			for (let i = 0; i < socialLinks.length; i++) {
-				document
-					.getElementsByTagName('svg')
-					[i].addEventListener('click', (ev) => {
-						window.open(socialLinks[i])
-					})
-			}
-		})
 		.catch(
 			(err) =>
 				(document.getElementById('update-time').innerText =
 					'Sorry, you appear to be offline.')
 		)
+	document.getElementById('select-2').selectedIndex = 1
+
+	for (let i = 0; i < socialLinks.length; i++) {
+		document
+			.getElementsByTagName('svg')
+			[i].addEventListener('click', (ev) => {
+				window.open(socialLinks[i])
+			})
+	}
 }
 
 /**

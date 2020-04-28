@@ -2,7 +2,6 @@ const PRECACHE = 'kudi-cache-v2'
 const RUNTIME = 'runtime'
 const PRECACHE_URLS = [
 	'./index.html',
-	'./resx/css/hamburgers.css',
 	'./resx/css/main.css',
 	'./resx/img/cent.svg',
 	'./resx/img/coin.svg',
