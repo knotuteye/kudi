@@ -27,6 +27,7 @@ const init = () => {
 					document.getElementsByTagName('select')[i].appendChild(opt)
 				}
 			}
+			document.getElementById('select-2').selectedIndex = 1
 			let refreshTime = new Date(data.time_last_update * 1000)
 			document.getElementById(
 				'update-time'
@@ -37,7 +38,6 @@ const init = () => {
 				(document.getElementById('update-time').innerText =
 					'Sorry, you appear to be offline.')
 		)
-	document.getElementById('select-2').selectedIndex = 1
 
 	for (let i = 0; i < socialLinks.length; i++) {
 		document
@@ -53,33 +53,42 @@ const init = () => {
  * @param {Event} event
  */
 const convert = (event) => {
-	hideKeyboard()
-	let input = document.getElementById(
-		`input-${event.target.id.slice(-1) == 1 ? 2 : 1}`
-	)
-	let select = document.getElementById(
-		`select-${event.target.id.slice(-1) == 1 ? 2 : 1}`
-	)
-	input.value = (
-		parseFloat(
-			document.getElementById(`input-${event.target.id.slice(-1)}`).value
-		) *
-		(parseFloat(select.value) /
+	if (
+		!(
+			document.getElementsByTagName('input')[0] == '' &&
+			document.getElementsByTagName('input')[1] == ''
+		)
+	) {
+		hideKeyboard()
+		let input = document.getElementById(
+			`input-${event.target.id.slice(-1) == 1 ? 2 : 1}`
+		)
+		let select = document.getElementById(
+			`select-${event.target.id.slice(-1) == 1 ? 2 : 1}`
+		)
+		input.value = (
 			parseFloat(
-				document.getElementById(`select-${event.target.id.slice(-1)}`)
+				document.getElementById(`input-${event.target.id.slice(-1)}`)
 					.value
-			))
-	).toFixed(4)
-}
+			) *
+			(parseFloat(select.value) /
+				parseFloat(
+					document.getElementById(
+						`select-${event.target.id.slice(-1)}`
+					).value
+				))
+		).toFixed(4)
+	}
 
-const hideKeyboard = () => {
-	let field = document.createElement('input')
-	field.setAttribute('type', 'text')
-	document.body.appendChild(field)
-	setTimeout(function () {
-		field.focus()
+	const hideKeyboard = () => {
+		let field = document.createElement('input')
+		field.setAttribute('type', 'text')
+		document.body.appendChild(field)
 		setTimeout(function () {
-			field.setAttribute('style', 'display:none;')
+			field.focus()
+			setTimeout(function () {
+				field.setAttribute('style', 'display:none;')
+			}, 50)
 		}, 50)
-	}, 50)
+	}
 }

@@ -67,11 +67,8 @@ self.addEventListener('fetch', (event) => {
 	} else
 		event.respondWith(
 			fetch(event.request).catch((error) => {
-				console.error({
-					message: `[PWA Builder] Network request Failed. Serving offline page ${error}`,
-					event,
-				})
-				return new Response('<h1>Offline</h1>')
+				console.log('Could not connect to the internet.')
+				return
 			})
 		)
 })
