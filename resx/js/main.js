@@ -1,9 +1,3 @@
-const socialLinks = [
-	'https://github.com/knotuteye',
-	'mailto:kevinotuteye@gmail.com',
-	'https://t.me/otuteye',
-]
-
 const init = () => {
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('service-worker.js').catch((err) => {
@@ -15,37 +9,27 @@ const init = () => {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			for (
-				let i = 0;
-				i < document.getElementsByTagName('select').length;
-				i++
-			) {
-				for (const currency in data.conversion_rates) {
-					let opt = document.createElement('option')
-					opt.text = currency
-					opt.value = data.conversion_rates[currency]
-					document.getElementsByTagName('select')[i].appendChild(opt)
-				}
+			let x = document.getElementsByTagName('select')
+
+			for (const currency in data.conversion_rates) {
+				let opt = document.createElement('option')
+				opt.text = currency
+				opt.value = data.conversion_rates[currency]
+
+				x[0].appendChild(opt)
+				x[1].appendChild(opt.cloneNode(true))
 			}
-			document.getElementById('select-2').selectedIndex = 1
+
+			x[1].selectedIndex = 1
 			let refreshTime = new Date(data.time_last_update * 1000)
-			document.getElementById(
-				'update-time'
-			).innerText += ` ${refreshTime.getDate()}\\${refreshTime.getMonth()}\\${refreshTime.getFullYear()}`
+			let y = document.getElementById('update-time')
+			y.innerText += ` ${refreshTime.getDate()}\\${refreshTime.getMonth()}\\${refreshTime.getFullYear()}`
 		})
 		.catch(
 			(err) =>
 				(document.getElementById('update-time').innerText =
 					'Sorry, you appear to be offline.')
 		)
-
-	for (let i = 0; i < socialLinks.length; i++) {
-		document
-			.getElementsByTagName('svg')
-			[i].addEventListener('click', (ev) => {
-				window.open(socialLinks[i])
-			})
-	}
 }
 
 /**
@@ -53,19 +37,14 @@ const init = () => {
  * @param {Event} event
  */
 const convert = (event) => {
-	if (
-		!(
-			document.getElementsByTagName('input')[0] == '' &&
-			document.getElementsByTagName('input')[1] == ''
-		)
-	) {
-		hideKeyboard()
-		let input = document.getElementById(
-			`input-${event.target.id.slice(-1) == 1 ? 2 : 1}`
-		)
-		let select = document.getElementById(
-			`select-${event.target.id.slice(-1) == 1 ? 2 : 1}`
-		)
+	hideKeyboard()
+	let input = document.getElementById(
+		`input-${event.target.id.slice(-1) == 1 ? 2 : 1}`
+	)
+	let select = document.getElementById(
+		`select-${event.target.id.slice(-1) == 1 ? 2 : 1}`
+	)
+	try {
 		input.value = (
 			parseFloat(
 				document.getElementById(`input-${event.target.id.slice(-1)}`)
@@ -78,17 +57,17 @@ const convert = (event) => {
 					).value
 				))
 		).toFixed(4)
-	}
+	} catch (error) {}
+}
 
-	const hideKeyboard = () => {
-		let field = document.createElement('input')
-		field.setAttribute('type', 'text')
-		document.body.appendChild(field)
+const hideKeyboard = () => {
+	let field = document.createElement('input')
+	field.setAttribute('type', 'text')
+	document.body.appendChild(field)
+	setTimeout(function () {
+		field.focus()
 		setTimeout(function () {
-			field.focus()
-			setTimeout(function () {
-				field.setAttribute('style', 'display:none;')
-			}, 50)
+			field.setAttribute('style', 'display:none;')
 		}, 50)
-	}
+	}, 50)
 }

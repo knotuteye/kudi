@@ -1,3 +1,25 @@
+@font-face {
+	font-family: 'Comfortaa';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/comfortaa/v28/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfIB1fyc4.woff2)
+		format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+		U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/manrope/v1/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk6jFN_C-bnTe87A.woff2)
+		format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+		U+2215, U+FEFF, U+FFFD;
+}
 * {
 	font-display: swap;
 	transition: all 0.2s ease-in-out;
@@ -38,17 +60,6 @@ h1 {
 	border: 0;
 	margin: 0;
 	overflow: visible;
-}
-.hamburger:hover {
-	opacity: 0.7;
-}
-.hamburger.is-active:hover {
-	opacity: 0.7;
-}
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-	background-color: #000;
 }
 
 .hamburger-box {
@@ -187,20 +198,16 @@ img.exchange {
 	cursor: pointer;
 }
 
-.social > :nth-child(1) {
+.social > svg:nth-child(1) > a > path {
 	stroke: white;
 	fill: black;
 }
 
-.social > :nth-child(2) {
-	stroke: white;
+.social > svg:nth-child(2) > a > path {
 	fill: red;
 }
-.social > :nth-child(4) {
-	stroke: orange;
-	fill: orange;
-}
-.social > :nth-child(3) {
+
+.social > svg:nth-child(3) > a > path {
 	fill: #0088cc;
 }
 
